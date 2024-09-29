@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="keywords" content="home,page,الصفحة,الرئيسية" />
+        <meta name="description" content="WEBook Homepage" />
+        <title>WE Book</title>
+        <link rel="icon" href="/Icon.png" />
+        <link rel="apple-touch-icon" href="/Icon.png" />
+        <link rel="stylesheet" href="/Style.css" />
+        <link rel="manifest" href="/manifest.json" />
+        <script defer src="/JavaScript.js"></script>
+        <style>
+            body {
+                max-width: 640px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="loginDiv" style="display: block;" class="protected">
+            <div class="protected__alert" id="alert">You entered the wrong password</div>
+            <div class="protected__content">
+                <h1 class="protected__content__heading">You need a password to continue</h1>
+                <input class="protected__content__input" id="login" type="password" placeholder="password" onkeypress="PressEnterToLogin()" />
+                <button onclick="Login()" id="button" type="button" class="protected__content__btn">Continue</button>
+            </div>
+        </div>
+        <div id="mainDiv" style="display: none;">
+            <a id="logout" class="logout" href="#" title="Logout" onclick="Logout();"><i class="fa fa-sign-out" style="font-size: 28px; color: #5b2c92;"></i></a>
+            <a id="notifications" class="notifications" href="Notifications.html" title="Notifications"><i class="fa fa-bell-o" style="font-size: 28px; color: #5b2c92;"></i></a>
+            <a id="about" class="about" href="OurManagement.html" title="Our Management"><i class="fa fa-info-circle" style="font-size: 28px; color: #5b2c92;"></i></a>
+            <br />
+            <h1>WE Book</h1>
+            <h5>by Field Team</h5>
+            <div id="search">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td colspan="2" style="font-family: Arial, Helvetica, sans-serif; font-size: 7.5pt;">
+                            <form action="https://search.freefind.com/find.html" method="get" accept-charset="utf-8" target="_self">
+                                <input type="hidden" name="si" value="41445760" />
+                                <input type="hidden" name="pid" value="r" />
+                                <input type="hidden" name="n" value="0" />
+                                <input type="hidden" name="_charset_" value="" />
+                                <input type="hidden" name="bcd" value="&#247;" />
+                                <input type="text" name="query" size="15" />
+                                <input type="submit" value="Search" />
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <h3>Upper Training Team</h3>
+            <img src="/TransparentIcon.png" alt="We Logo" style="width: 160px; padding: 6px;" />
+            <br />
+            <div class="padding">
+                <button onclick="Info()">Info</button>
+                <button onclick="System()">System</button>
+                <button onclick="SoftSkills()">Soft Skills</button><br />
+                <br />
+                <button onclick="Promotions()">Promotions</button>
+                <button onclick="WERules()">WE Rules</button>
+                <button onclick="AboutUs()">About Us</button><br />
+                <br />
+                <button onclick="MissionAndVision()" style="width: 310px;">Mission & Vision</button>
+            </div>
+            <br />
+            <script>
+                function Info() {
+                    window.open("Info.html", "_self");
+                }
+                function System() {
+                    window.open("System.html", "_self");
+                }
+                function SoftSkills() {
+                    window.open("SoftSkills.html", "_self");
+                }
+                function Promotions() {
+                    window.open("Promotions.html", "_self");
+                }
+                function WERules() {
+                    window.open("WERules.html", "_self");
+                }
+                function AboutUs() {
+                    window.open("AboutUs.html", "_self");
+                }
+                function MissionAndVision() {
+                    window.open("MissionAndVision.html", "_self");
+                }
+            </script>
+            <footer>
+                <div class="row">
+                    <div class="column">
+                        <p style="font-size: 9px;">
+                            Channel Manager<br />
+                            Ahmed Kasem
+                        </p>
+                    </div>
+                    <div class="column">
+                        <p style="font-size: 9px;">
+                            Regional Manager<br />
+                            Yehia Tawfik
+                        </p>
+                    </div>
+                    <div class="column">
+                        <p style="font-size: 9px;">
+                            Supervisor<br />
+                            Ahmed Gamal
+                        </p>
+                    </div>
+                    <div class="column">
+                        <p style="font-size: 9px;">
+                            Area Manager<br />
+                            Eslam Gomaa
+                        </p>
+                    </div>
+                </div>
+                <p style="font-size: 9px;">Developed by: Mamdouh Khalaf .. "MUE Team"</p>
+                <br />
+            </footer>
+        </div>
+    </body>
+</html>
