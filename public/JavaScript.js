@@ -26,7 +26,7 @@ async function subscribeUser() {
         applicationServerKey: urlBase64ToUint8Array("BE4LLxozZ2s94SOfmtLy5zCBd9H3Ll1TaBNlNY5d8OjnErQQ7PNBPj2BsTLSOoHCDigVBXMJpEU96iTz33UyZ_E"),
     });
     console.log("User is subscribed:", subscription);
-    await fetch("/subscribe", {
+    await fetch("api/subscribe", {
         method: "POST",
         body: JSON.stringify(subscription),
         headers: {
