@@ -1,6 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/subscribe", "destination": "/api/subscribe" },
-    { "source": "/sendNotification", "destination": "/api/sendNotification" }
-  ]
-}
