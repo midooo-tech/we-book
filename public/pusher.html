@@ -84,7 +84,7 @@
                     const title = document.getElementById("title").value;
                     const body = document.getElementById("body").value;
                     const url = document.getElementById("url").value;
-                    fetch("/sendNotification", {
+                    fetch("/api/server", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
