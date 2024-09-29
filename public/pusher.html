@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <title>Push Notification Sender</title>
+        <link rel="icon" href="/Icon.png" />
+        <link rel="apple-touch-icon" href="/Icon.png" />
+        <link rel="stylesheet" href="/Style.css" />
+        <link rel="manifest" href="/manifest.json" />
+        <script src="/JavaScript.js" defer></script>
+        <style>
+            ::placeholder {
+                text-align: center;
+            }
+            ::-webkit-input-placeholder {
+                text-align: center;
+            }
+            :-moz-placeholder {
+                /* Firefox 18- */
+                text-align: center;
+            }
+            ::-moz-placeholder {
+                /* Firefox 19+ */
+                text-align: center;
+            }
+            :-ms-input-placeholder {
+                text-align: center;
+            }
+            input[type="text"],
+            textarea,
+            button {
+                border: 2px solid #5b2c92 !important;
+                border-radius: 0px !important;
+                width: 300px;
+            }
+            input[type="text"],
+            button {
+                height: 40px;
+            }
+            textarea {
+                height: 200px;
+                resize: none;
+            }
+            input[type="text"],
+            textarea:focus {
+                outline: none;
+                border-color: #555;
+            }
+            button:hover {
+                background-color: #5b2c92;
+                border-color: #5b2c92;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="loginDiv" style="display: none;" class="protected"></div>
+        <div id="mainDiv" style="display: block;">
+            <a id="logout" class="logout" href="#" title="Logout" onclick="Logout();"><i class="fa fa-sign-out" style="font-size: 28px; color: #5b2c92;"></i></a>
+            <br />
+            <br />
+            <div>
+                <h1>Push Notification</h1>
+                <br />
+                <br />
+                <br />
+                <br />
+                <form id="notificationForm">
+                    <input style="width: 300px; height: 40px; border-radius: 0px;" type="text" id="title" placeholder="Notification Title" required /><br />
+                    <br />
+                    <textarea style="height: 200px; width: 300px; resize: none; border-radius: 0px;" id="body" placeholder="Notification Message" required></textarea><br />
+                    <br />
+                    <input style="width: 300px; height: 40px; border-radius: 0px;" type="text" id="url" placeholder="Notification URL" required /><br />
+                    <br />
+                    <button style="width: 300px; height: 40px; border-radius: 0px;" id="submit" type="submit">Send Notification</button>
+                </form>
+            </div>
+            <script>
+                document.getElementById("notificationForm").addEventListener("submit", function (event) {
+                    event.preventDefault();
+                    const title = document.getElementById("title").value;
+                    const body = document.getElementById("body").value;
+                    const url = document.getElementById("url").value;
+                    fetch("/sendNotification", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ title, body, url }),
+                    })
+                        .then((response) => response.json())
+                        .then((data) => alert(data.message))
+                        .catch((error) => console.error("Error:", error));
+                });
+            </script>
+            <footer>
+                <br />
+                <a id="back" class="back" href="javascript:history.back()" title="Back"><i class="fa fa-arrow-left" style="font-size: 28px; color: #5b2c92;"></i></a>
+                <a id="home" class="home" onclick="location.href='index.html'" title="Home"><i class="fa fa-home" style="font-size: 28px; color: #5b2c92;"></i></a>
+                <br />
+                <br />
+            </footer>
+        </div>
+    </body>
+</html>
